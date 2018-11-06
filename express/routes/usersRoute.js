@@ -2,8 +2,6 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
 
-
-
 router.get("/", (req, res) => {
 
     var con = mysql.createConnection({
@@ -44,22 +42,6 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
     console.log(req.params);
-
-    // var con = mysql.createConnection({
-    //     host: "localhost",
-    //     user: "root",
-    //     password: "password",
-    //     database: "firstDB"
-    // });
-
-    // con.query(
-    //     "INSERT INTO Users SET ?",
-    //     (err, results, fields) => {
-    //         if (err) throw err; 
-    //         res.send(results.insertId);
-    //     }
-    // )
-    // res.send("POST user");
 })
 
 module.exports = router;
